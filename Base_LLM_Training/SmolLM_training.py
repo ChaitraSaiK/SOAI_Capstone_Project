@@ -34,13 +34,11 @@ from torch.distributed.fsdp.wrap import (
     size_based_auto_wrap_policy,
 )
 # --- End FSDP Imports ---
-# from torch.nn.parallel import DistributedDataParallel as DDP 
 from torch.utils.data import DataLoader
-# from torch.utils.data.distributed import DistributedSampler
 from torch.cuda.amp import autocast, GradScaler
 from tqdm import tqdm
 
-# Add NCCL and CUDA debugging/stability environment variables
+# NCCL and CUDA debugging/stability environment variables
 os.environ["NCCL_DEBUG"] = "INFO"
 os.environ["NCCL_P2P_DISABLE"] = "1"
 os.environ["NCCL_IB_DISABLE"] = "1"
@@ -610,8 +608,6 @@ def main(batch_size=1, seq_len=512, epochs=20, steps_per_epoch=1000,
 
     # Data
     dataset = C4Dataset(split='train', seq_len=seq_len)
-    # sampler = DistributedSampler(dataset, num_replicas=world_size, rank=rank, shuffle=True)
-    # loader = DataLoader(dataset, batch_size=batch_size, sampler=sampler, num_workers=1, pin_memory=False)
     if is_dist:
         dataset.dataset = dataset.dataset.shard(num_shards=world_size, index=rank)
     # Reduce num_workers to save memory
