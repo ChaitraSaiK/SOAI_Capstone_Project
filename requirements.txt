@@ -1,0 +1,31 @@
+# Core MCP and AI libraries
+mcp>=1.0.0
+torch>=2.0.0
+transformers>=4.35.0
+peft>=0.6.0
+bitsandbytes>=0.41.0
+accelerate>=0.24.0
+
+# Google AI
+google-generativeai>=0.3.0
+
+# Image processing
+Pillow>=10.0.0
+opencv-python>=4.8.0
+
+# Utilities
+numpy<2.0.0  # Pin to NumPy 1.x for compatibility with compiled modules
+aiofiles>=23.0.0
+asyncio-mqtt>=0.13.0
+python-dotenv>=1.0.0
+
+# Optional: For better performance
+# flash-attn>=2.3.0  # Optional, requires compatible GPU 
+fastmcp>=0.9.0
+
+# FastAPI UI Requirements
+fastapi>=0.104.0
+uvicorn[standard]>=0.24.0
+python-multipart>=0.0.6
+jinja2>=3.1.2
+aiofiles>=23.2.1
