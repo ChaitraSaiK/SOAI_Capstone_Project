@@ -11,23 +11,6 @@ A professional web-based user interface for the Medical AI Assistant, built with
 - **Professional Design**: Clean, medical-themed UI with responsive design
 - **Real-time Communication**: Fast, asynchronous communication with the AI backend
 
-## Architecture
-
-```
-medical_ui/
-├── app.py                 # FastAPI backend application
-├── launch_ui.py          # Launch script
-├── requirements.txt      # UI-specific dependencies
-├── static/               # Static assets
-│   ├── css/
-│   │   └── style.css    # Main stylesheet
-│   └── js/
-│       └── app.js       # Frontend JavaScript
-├── templates/            # HTML templates
-│   └── index.html       # Main chat interface
-└── uploads/             # Uploaded images storage
-```
-
 ## Installation
 
 1. **Navigate to the UI directory**:
